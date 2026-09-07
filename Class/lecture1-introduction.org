@@ -1,0 +1,14 @@
+* Introduction
+** Data Structures
+
+
+** Preproccesser Instructions
+
+
+** Compilation
+
+
+** Data Types
+
+
+** Control Structs and basic use of structs
