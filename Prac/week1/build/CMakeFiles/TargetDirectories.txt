@@ -1,0 +1,3 @@
+/home/rye/UNI/Programming-3/Prac/week1/build/CMakeFiles/week1.dir
+/home/rye/UNI/Programming-3/Prac/week1/build/CMakeFiles/edit_cache.dir
+/home/rye/UNI/Programming-3/Prac/week1/build/CMakeFiles/rebuild_cache.dir

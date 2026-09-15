@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/rye/UNI/Programming-3/Prac/week1/build",
+  "command": "/usr/bin/c++   -std=gnu++17 -Werror -Wall -Wextra -o CMakeFiles/week1.dir/week1programs.cpp.o -c /home/rye/UNI/Programming-3/Prac/week1/week1programs.cpp",
+  "file": "/home/rye/UNI/Programming-3/Prac/week1/week1programs.cpp",
+  "output": "CMakeFiles/week1.dir/week1programs.cpp.o"
+}
+]

@@ -1,14 +1,69 @@
 * Introduction
-** Data Structures
+** Practical 
+Went over the basic form of a program. 
+
+Preprocessor Instructions 
+#+begin_SRC cpp
+  #include <iostream>
+  using namespace std;
+#+end_SRC
 
 
-** Preproccesser Instructions
+#+begin_SRC cpp
+  void main() {} // using void returns nothing
+
+  int main() {} // int returns 1/0 - use for success
+#+end_SRC 
+*** Using INT
+If function can encounter an error where it can no longer procced, use it to return a value to see if it successful or not
+
+*** Compilation
+g++ for cpp 
+
+I need to figure out why it compiles when using cmake with this
+It compiles cleanly
+
+#+begin_SRC cpp
+  cmake_minimum_required(VERSION 3.14)
+  project(week1-prac)
+
+  set(CMAKE_CXX_STANDARD 17)
+  set(CMAKE_CXX_STANDARD_REQUIRED ON)
+  set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
+  add_executable(week1 week1programs.cpp)
+
+  # compile flags - 
+  target_compile_options(week1 PRIVATE -Werror -Wall -Wextra)  
+#+end_SRC
+
+vs 
+
+#+begin_SRC cpp
+  gcc week1programs.cpp -o ./build/week1
+
+  week1programs.cpp: In function ‘void conversionExample()’:
+  week1programs.cpp:9:8: error: variable or field ‘intNum’ declared void
+      9 |   void intNum = static_cast<int>(inputNum);
+        |        ^~~~~~
+  week1programs.cpp:12:7: error: ‘intNum’ was not declared in this scope; did you mean ‘inputNum’?
+     12 |   if (intNum > 0) {
+        |       ^~~~~~
+        |       inputNum  
+#+end_SRC
+
+** Control Flow
+if-else
+while
+switch 
 
 
-** Compilation
+** Structs
+#+begin_SRC cpp
+struct {
+  string Colour;
+  string Make;
+  int Year;
+} Car;
+#+end_SRC
 
-
-** Data Types
-
-
-** Control Structs and basic use of structs
