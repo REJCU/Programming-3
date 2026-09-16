@@ -1,0 +1,15 @@
+* Lecture 2 - Pointers
+** Pointers
+Instead of referring to name, can use address in memory.
+
+#+begin_src cpp
+  #include <iostream>
+  using namespace std;
+  int num = 3;
+
+  cout << "num = " << num;
+  cit << num; 
+
+  return 0;
+#+end_src
+

@@ -187,8 +187,9 @@ int example8() {
   std::cout << bookRec.libcode;
   //  std::cin >> bookRec.libcode;
 
-  std::cout << bookRec.title << " by " << bookRec.author << ": $" << std::fixed
-            << std::setprecision(2) << bookRec.value
+  std::cout << "\n"
+            << bookRec.title << "\n by " << bookRec.author << ": $"
+            << std::fixed << std::setprecision(2) << bookRec.value
             << "\n libcode: " << bookRec.libcode << std::endl;
   return 0;
 }

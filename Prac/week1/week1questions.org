@@ -1,0 +1,15 @@
+* Week 1 Exercises
+
+** Exercise 2 - Type casting and If statement
+If an invalid number was entered, it defaults to zero, for converting to integer and the number is zero if statement output.
+
+** Exercise 3 - Salary and Switch Statement
+80000(.0) exactly outputs "invalid positon type".
+
+** Exercise 5 - Live code modification
+*** Part B - modify and brief explanation
+1. added new member for struct, defined as string.
+2. got character output from user and then character input is pointed towards Car.model
+3. Outputed to terminal as "the model of the car is " << car.model
+
+   

@@ -19,7 +19,7 @@ void conversionExample() {
 }
 
 void findPosition() {
-  int salary;
+  float salary;
   cout << "Enter your salary:";
   cin >> salary;
   int category;
