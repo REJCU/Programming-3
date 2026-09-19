@@ -7,7 +7,7 @@ void conversionExample() {
   cin >> inputNum;
 
   int intNum = static_cast<int>(inputNum);
-  cout << "converted to integer: " << inputNum << endl;
+  cout << "converted to integer: " << intNum << endl;
 
   if (intNum > 0) {
     cout << "the number is positive" << endl;
@@ -42,8 +42,7 @@ void findPosition() {
     break;
   case 3:
     cout << "Position type; Manager" << endl;
-    break;
-  case 0:
+  default:
     cout << "Invalid position type." << endl;
   }
 }
@@ -51,6 +50,7 @@ void findPosition() {
 struct {
   string Colour;
   string Make;
+  string Model;
   int Year;
 } Car;
 
@@ -61,11 +61,15 @@ void getCar() {
   cout << "Make of car: ";
   cin >> Car.Make;
 
+  cout << "Model of car: ";
+  cin >> Car.Model;
+
   cout << "Year: ";
   cin >> Car.Year;
 
   cout << "The colour of the car is " << Car.Colour
-       << "\nThe make of the car is " << Car.Make << "\nYear: " << Car.Year;
+       << "\nThe make of the car is " << Car.Make << "\nThe model of the car is"
+       << Car.Model << "\nYear: " << Car.Year;
 }
 
 int main() {
