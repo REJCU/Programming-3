@@ -43,7 +43,7 @@ NIX_CC='/nix/store/w88q44gqd1qg5wmkk7v0h97rpiqvam0l-gcc-wrapper-15.3.0'
 export NIX_CC
 NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu='1'
 export NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu
-NIX_CFLAGS_COMPILE=' -frandom-seed=r7yr0a8syi -isystem /nix/store/b5bpi6zfajzzrwwpgba2q6li3nnya4bs-python3-3.14.7/include -isystem /nix/store/7ydf0dzbsq7w35bxifci2mslm76pw1qf-gnumake-4.4.1/include -isystem /nix/store/b5bpi6zfajzzrwwpgba2q6li3nnya4bs-python3-3.14.7/include -isystem /nix/store/7ydf0dzbsq7w35bxifci2mslm76pw1qf-gnumake-4.4.1/include'
+NIX_CFLAGS_COMPILE=' -frandom-seed=q5kagfb3s7 -isystem /nix/store/b5bpi6zfajzzrwwpgba2q6li3nnya4bs-python3-3.14.7/include -isystem /nix/store/7ydf0dzbsq7w35bxifci2mslm76pw1qf-gnumake-4.4.1/include -isystem /nix/store/b5bpi6zfajzzrwwpgba2q6li3nnya4bs-python3-3.14.7/include -isystem /nix/store/7ydf0dzbsq7w35bxifci2mslm76pw1qf-gnumake-4.4.1/include'
 export NIX_CFLAGS_COMPILE
 NIX_ENFORCE_NO_NATIVE='1'
 export NIX_ENFORCE_NO_NATIVE
@@ -201,12 +201,7 @@ declare -a propagatedTargetDepFiles=('propagated-target-target-deps' )
 setOutputFlags=''
 shell='/nix/store/9ipfvwnqp1q8ijnmi5sxvlx9r8w34lw3-bash-5.3p15/bin/bash'
 export shell
-shellHook='        echo "loaded `gcc --version`
-	for i in pkgs.mkshell
-do
-echo "$i"
-done
-"
+shellHook='echo "loaded `gcc --versionx`"
 '
 export shellHook
 stdenv='/nix/store/dvj9bnk0vdbzzhn76wsnzk1dv6c6jbx1-stdenv-linux'

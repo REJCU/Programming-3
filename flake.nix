@@ -20,15 +20,12 @@
 	cppcheck
 	codespell
 	gnumake
+
+	
       ];
 
       shellHook = ''
-        echo "loaded `gcc --version`
-	for i in pkgs.mkshell
-do
-echo "$i"
-done
-"
+        echo "loaded `gcc --versionx`"
       '';
     };
   };

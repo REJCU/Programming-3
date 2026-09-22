@@ -1,5 +1,7 @@
+#include <fstream>
 #include <iostream>
 #include <iterator>
+#include <string>
 using namespace std;
 
 int pointer() {
@@ -46,9 +48,48 @@ int dynamicArray() {
   return 0;
 }
 
-int main() {
+// done sepera
+int commandlineargs(int argc, char *argv[]) {
+  if (argc < 3) {
+    cout << "Usage: " << argv[0] << " <FirstName> <LastName>" << endl;
+    return 1;
+  }
+
+  string firstName = argv[1];
+  string lastname = argv[2];
+  string fullName = firstName + " " + lastname;
+
+  cout << "Full name: " << fullName << endl;
+
+  return 0;
+}
+
+int readFile() { // still need to write more error checking and other
+  string inputFile;
+  string outputfile;
+
+  cout << "Enter input file: " << inputFile << endl;
+  cin >> inputFile;
+  cout << "Enter output file: " << outputfile << endl;
+  cin >> outputfile;
+
+  ifstream file(inputFile, ios::in);
+  if (!file.is_open())
+    cout << "failed to open " << inputFile << "\n";
+  else {
+    string s;
+    while (file >> s) {
+      cout << "File output: " << s;
+      ofstream writefile(outputfile);
+      writefile << s;
+    }
+  }
+  return 0;
+}
+
+int main(int argc, char *argv[]) {
   int choice;
-  cout << "enter a num (1-5): ";
+  cout << "enter a num (1-4): ";
   cin >> choice;
 
   switch (choice) {
@@ -58,6 +99,10 @@ int main() {
     arrayOfHeights();
   case 3:
     dynamicArray();
+  case 4:
+    // commandlineargs(int argc, char *argv[]);  // i want to find a way to make
+    // it accept the command line args
+    readFile();
   }
 
   return 0;
