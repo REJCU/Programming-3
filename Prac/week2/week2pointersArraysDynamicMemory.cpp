@@ -74,20 +74,22 @@ int readFile() { // still need to write more error checking and other
   cin >> outputfile;
 
   ifstream file(inputFile, ios::in);
+
   if (!file.is_open())
     cout << "failed to open " << inputFile << "\n";
   else {
-    string s;
-    while (file >> s) {
-      cout << "File output: " << s;
+    string str;
+    while (getline(file, str)) {
+      cout << str << endl;
       ofstream writefile(outputfile);
-      writefile << s;
+      writefile << str;
     }
   }
+  file.close();
   return 0;
 }
 
-int main(int argc, char *argv[]) {
+int main() {
   int choice;
   cout << "enter a num (1-4): ";
   cin >> choice;
@@ -100,10 +102,10 @@ int main(int argc, char *argv[]) {
   case 3:
     dynamicArray();
   case 4:
-    // commandlineargs(int argc, char *argv[]);  // i want to find a way to make
-    // it accept the command line args
+    // commandlineargs(int argc, char *argv[]);  // i want to find a way to
+    // make it accept the command line args
     readFile();
-  }
 
-  return 0;
+    return 0;
+  }
 }
