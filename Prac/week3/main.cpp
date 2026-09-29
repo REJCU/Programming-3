@@ -1,0 +1,27 @@
+#include "car_Utils.h"
+#include <iomanip>
+#include <ios>
+#include <iostream>
+
+using namespace std;
+int main() {
+  cout << "CP2406 - Week 3: Functions definition\n";
+  double distanceKm, timeHours, litres;
+  cout << "Enter distance travelled (km): ";
+  cin >> distanceKm;
+
+  cout << "Enter time taken (hours): ";
+  cin >> timeHours;
+
+  cout << "Enter litres used (litres): ";
+  cin >> litres;
+
+  double speedKm = calculateSpeed(distanceKm, timeHours);
+  double lper100 = fuelEfficiencyPer100Km(litres, distanceKm);
+
+  cout << fixed << setprecision(2);
+  cout << "Average speed: " << speedKm << "km/h\n";
+  cout << "Fuel efficiency: " << lper100 << "L/h\n";
+
+  return 0;
+}

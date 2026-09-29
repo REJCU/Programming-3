@@ -1,6 +1,6 @@
 #include <fstream>
 #include <iostream>
-#include <iterator>
+#include <ostream>
 #include <string>
 using namespace std;
 
@@ -34,12 +34,12 @@ int dynamicArray() {
   float *heights = new float[numStudents];
 
   for (int i = 0; i < numStudents; ++i) {
-    cout << "Student " << (i + i) << ": ";
-    cin >> numStudents;
+    cout << "Student " << (i + 1) << ": ";
+    cin >> heights[i];
   }
 
   if (numStudents >= 6) {
-    cout << "the height of the 6th student is: " << heights[6] << endl;
+    cout << "the height of the 6th student is: " << heights[5] << endl;
   } else {
     cout << "there are less than 6 students." << endl;
   }
@@ -48,7 +48,7 @@ int dynamicArray() {
   return 0;
 }
 
-// done sepera
+// done seperately
 int commandlineargs(int argc, char *argv[]) {
   if (argc < 3) {
     cout << "Usage: " << argv[0] << " <FirstName> <LastName>" << endl;
@@ -68,22 +68,23 @@ int readFile() { // still need to write more error checking and other
   string inputFile;
   string outputfile;
 
-  cout << "Enter input file: " << inputFile << endl;
+  cout << "Enter input file: " << endl;
   cin >> inputFile;
-  cout << "Enter output file: " << outputfile << endl;
+  cout << "Enter output file: " << endl;
   cin >> outputfile;
 
   ifstream file(inputFile, ios::in);
 
   if (!file.is_open())
-    cout << "failed to open " << inputFile << "\n";
+    cout << "failed to open: " << inputFile << "\n";
   else {
+    ofstream writefile(outputfile);
     string str;
     while (getline(file, str)) {
-      cout << str << endl;
-      ofstream writefile(outputfile);
-      writefile << str;
+      writefile << str << endl;
     }
+    writefile.close();
+    cout << "File copied successfully" << '\n';
   }
   file.close();
   return 0;
@@ -97,15 +98,19 @@ int main() {
   switch (choice) {
   case 1:
     pointer();
+    break;
   case 2:
     arrayOfHeights();
+    break;
   case 3:
     dynamicArray();
+    break;
   case 4:
+    // do not forget to do this in the recording
     // commandlineargs(int argc, char *argv[]);  // i want to find a way to
     // make it accept the command line args
     readFile();
-
+    break;
     return 0;
   }
 }
