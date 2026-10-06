@@ -5,7 +5,8 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
   if (argc < 3) {
-    cout << "Usage: " << argv[0] << " <FirstName> <LastName>" << endl;
+    cout << "Usage: " << argv[0] << " <FirstName> <LastName>"
+         << endl; // usage guide if user does not input two strings
     return 1;
   }
 

@@ -1,6 +1,5 @@
 #include <fstream>
 #include <iostream>
-#include <ostream>
 #include <string>
 using namespace std;
 
@@ -22,7 +21,8 @@ int arrayOfHeights() {
     cout << "Student " << (i + 1) << ": ";
     cin >> heights[i];
   }
-  cout << "The height of the 6th student is " << heights[5] << endl;
+  cout << "The height of the 6th student is " << heights[5]
+       << endl; // array indexes at 0. 6th student is at index 5
   return 0;
 }
 
@@ -31,7 +31,7 @@ int dynamicArray() {
   cout << "enter the num of students: ";
   cin >> numStudents;
 
-  float *heights = new float[numStudents];
+  float *heights = new float[numStudents]; // allocate the mem on heap
 
   for (int i = 0; i < numStudents; ++i) {
     cout << "Student " << (i + 1) << ": ";
@@ -44,11 +44,10 @@ int dynamicArray() {
     cout << "there are less than 6 students." << endl;
   }
 
-  delete[] heights;
+  delete[] heights; // frees heap memory. delete for arrays
   return 0;
 }
 
-// done seperately
 int commandlineargs(int argc, char *argv[]) {
   if (argc < 3) {
     cout << "Usage: " << argv[0] << " <FirstName> <LastName>" << endl;
@@ -64,7 +63,7 @@ int commandlineargs(int argc, char *argv[]) {
   return 0;
 }
 
-int readFile() { // still need to write more error checking and other
+int readFile() {
   string inputFile;
   string outputfile;
 
@@ -75,16 +74,19 @@ int readFile() { // still need to write more error checking and other
 
   ifstream file(inputFile, ios::in);
 
-  if (!file.is_open())
+  if (!file.is_open()) // stops program if it cannot open input file
     cout << "failed to open: " << inputFile << "\n";
   else {
     ofstream writefile(outputfile);
     string str;
+    int lineCounter = 0;
     while (getline(file, str)) {
       writefile << str << endl;
+      lineCounter++;
     }
     writefile.close();
     cout << "File copied successfully" << '\n';
+    cout << "Number of lines copied: " << lineCounter;
   }
   file.close();
   return 0;
@@ -106,11 +108,10 @@ int main() {
     dynamicArray();
     break;
   case 4:
-    // do not forget to do this in the recording
-    // commandlineargs(int argc, char *argv[]);  // i want to find a way to
-    // make it accept the command line args
     readFile();
-    break;
     return 0;
+    break;
+  default:
+    cout << "Invalid option";
   }
 }

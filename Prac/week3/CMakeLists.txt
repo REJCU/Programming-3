@@ -7,10 +7,12 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(SOURCES
 	carutils.cpp
-	car_utils.h
+	carutils.h
 )
 
-add_executable(main)
+# compile flags 
 
-# compile flags - 
-target_compile_options(week3 PRIVATE -Werror -Wall -Wextra)
+
+add_executable(main main.cpp ${SOURCES})
+
+target_compile_options(main  PRIVATE -Werror -Wall -Wextra)
