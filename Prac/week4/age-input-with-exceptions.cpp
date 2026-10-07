@@ -24,13 +24,13 @@ int main() {
 
   try {
     if (isInteger(token) == false) {
-      throw runtime_error("Age must be a whole number");
+      throw invalid_argument("Age must be a whole number");
     }
-    long age = isInteger(token);
+    long age = stol(token);
     if (age < 0)
-      throw logic_error("Age cannot be negative");
+      throw invalid_argument("Age cannot be negative");
     if (age > 130)
-      throw logic_error("age out of range");
+      throw out_of_range("age out of range");
     cout << "Valid age: " << age << "\n";
   } catch (const invalid_argument &ex) {
     cerr << "Invalid argument: " << ex.what() << "\n";
