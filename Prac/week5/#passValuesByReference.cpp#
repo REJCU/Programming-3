@@ -1,0 +1,26 @@
+#include <iostream>
+#include <ostream>
+using namespace std;
+
+void incrementByValue(int x) { x = x + 1; }
+
+void incrementByReference(int &x) { x = x + 1; }
+
+void incrementByPointer(int *x) { x = x + 1; }
+
+int main() {
+  int a = 5;
+  int b = 5;
+  int c = 5;
+
+  incrementByValue(a);
+  incrementByReference(b);
+  incrementByPointer(&c);
+
+  cout << "after pass-by-value " << a << endl;
+  cout << "after pass-by-reference " << b << endl;
+  cout << "after pass-by-pointer" << c << endl;
+  cout << "after pass-by-pointer" << &c << endl;
+  return 0;
+}
+

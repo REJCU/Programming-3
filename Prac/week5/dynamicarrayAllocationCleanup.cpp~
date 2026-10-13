@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  int size;
+  cout << "Enter the number of elements: ";
+  cin << size;
+
+  int *arr = new int[size];
+
+  // input values
+  // calculate the averages
+  // display the result
+
+  delete[] arr;
+  return 0;
+}
