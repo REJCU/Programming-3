@@ -1,0 +1,15 @@
+input='12312' error=age out of range
+input='12312' error=age out of range
+input='123 ' error=Age must be a whole number
+input='12 ' error=Age must be a whole number
+input=' 166' error=Age must be a whole number
+input='12 ' error=Age must be a whole number
+input='23 ' error=Age must be a whole number
+input='12312 ' error=Age must be a whole number
+input='-1' error=Age cannot be negative
+input=' 23' error=Age must be a whole number
+input='1231212' error=age out of range
+input='23 ' error=Age must be a whole number
+input='23 ' error=Age must be a whole number
+input='123121212' error=age out of range
+input='123121212' error=age out of range
